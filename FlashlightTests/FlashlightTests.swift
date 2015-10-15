@@ -40,6 +40,7 @@ class FlashlightTests: XCTestCase {
             XCTAssert(false, "Expected flashlight to be off by default.")
         }
         
+        
         viewController.buttonTapped(self)
         
         let stateAfterOneToggle = checkStateForVC(viewController)
@@ -58,9 +59,9 @@ class FlashlightTests: XCTestCase {
         
         var pass: Bool
         
-        if vc.isOn && vc.view.backgroundColor == UIColor.whiteColor() && vc.button.titleLabel?.text == "Off" {
+        if vc.isOn && vc.view.backgroundColor == UIColor.whiteColor() && vc.myButton.titleLabel?.text == "Off" {
             pass = true
-        } else if !vc.isOn && vc.view.backgroundColor == UIColor.blackColor() && vc.button.titleLabel?.text == "On" {
+        } else if !vc.isOn && vc.view.backgroundColor == UIColor.blackColor() && vc.myButton.titleLabel?.text == "On" {
             pass = true
         } else {
             pass = false
